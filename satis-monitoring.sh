@@ -4,7 +4,7 @@ export exitCode=$?;
 
 if [ $exitCode != 0 ];
 then
-    echo "$(cat /tmp/satis | grep -A 2 'Exception')" > /tmp/satisException
+    echo "$(cat /tmp/satis | grep -A 2 'InvalidRepositoryException')" > /tmp/satisException
     mail -s "Something went wrong exposing your packages" <your-packages-admin>@<your-company>.com < /tmp/satisException
 fi
 
